@@ -29,6 +29,7 @@ class LogEntryAdminMixin(object):
             try:
                 link = urlresolvers.reverse(viewname, args=[obj.actor.id])
             except NoReverseMatch:
+                print("hi")
                 return u'%s' % (obj.actor)
             return format_html(u'<a href="{}">{}</a>', link, obj.actor)
 
